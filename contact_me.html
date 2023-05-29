@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Contact Form
+        </title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <div class="container">
+            <form id="form" action="https://formspree.io/f/mlekzkqe" method="POST">
+                <h3>
+                    CONTACT US
+                </h3>
+                <input type="text" name="name" id="name" placeholder="Your Name" autocomplete="off" required>
+                <input type="email" name="email" id="email" placeholder="Email Id" autocomplete="off" required >
+                <input type="text" name="phone" id="phone" placeholder="Phone no." autocomplete="off" required>
+                <textarea id="message" name="message" rows="4" placeholder="How can we help you?" autocomplete="off"></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <script>
+                document.getElementById("form").addEventListener("submit", function(event){
+                  event.preventDefault();
+                  document.getElementById("name").value = "";
+                  document.getElementById("email").value = "";
+                  document.getElementById("phone").value = "";
+                  document.getElementById("message").value = "";
+                  this.submit();
+                });
+              </script>
+        </div>
+        
+    </body>
+</html>
